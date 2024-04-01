@@ -45,6 +45,16 @@ changeName = (e) => {
         inputName: e.target.value
     })
 }
+changeAge = (e) =>{
+    this.setState({
+        inputAge: e.target.value
+    })
+}
+changeClass = (e)=>{
+    this.setState({
+        inputClass: e.target.value
+    })
+}
 
     render() {
         return (
@@ -55,17 +65,9 @@ changeName = (e) => {
                 {/*//inputName*/}
                 <input type="text" value={this.state.inputName} onChange={this.changeName}/>
                 {/*//inputAge*/}
-                <input type="text" value={this.state.inputAge} onChange={(e) => {
-                    this.setState({
-                        inputAge: e.target.value
-                    })
-                }}/>
+                <input type="text" value={this.state.inputAge} onChange={this.changeAge}/>
                 {/*InputClass*/}
-                <input type="" value={this.state.inputClass} onChange={(e)=>{
-                    this.setState({
-                        inputClass: e.target.value
-                    })
-                }}/>
+                <input type="" value={this.state.inputClass} onChange={this.changeClass}/>
                 {/*<button onClick={()=>{*/}
                 {/*    this.add()*/}
                 {/*}}>Add</button>*/}
