@@ -25,13 +25,14 @@ export default class Demo4 extends Component{
 
         }
     }
+
     render() {
-        return(
-            <>
-                {this.state.list.map(item =>(
-                    <h2>Name: {item.name},Age: {item.age}, Class: {item.class}</h2>
-                ))}
-            </>
-        )
+        return (
+            <div>
+                {this.state.list.map((item,index) =>
+                <h2 key={index}>{item.name},{item.age},{item.class}</h2>
+                )}
+            </div>
+        );
     }
 }
