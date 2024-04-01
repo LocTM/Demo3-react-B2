@@ -66,9 +66,10 @@ add = () => {
                         inputClass: e.target.value
                     })
                 }}/>
-                <button onClick={()=>{
-                    this.add()
-                }}>Add</button>
+                {/*<button onClick={()=>{*/}
+                {/*    this.add()*/}
+                {/*}}>Add</button>*/}
+                <button onClick={this.add}>Add</button>
 
 
             </div>
