@@ -40,20 +40,20 @@ add = () => {
         }
     })
 }
+changeName = (e) => {
+    this.setState({
+        inputName: e.target.value
+    })
+}
 
     render() {
         return (
             <div>
-                <h1>{this.state.inputName}</h1>
                 {this.state.list.map((item,index) =>
                 <h2 key={index}>{item.name},{item.age},{item.class}</h2>
                 )}
                 {/*//inputName*/}
-                <input type="text" value={this.state.inputName} onChange={(e) => {
-                    this.setState({
-                        inputName: e.target.value
-                    })
-                }}/>
+                <input type="text" value={this.state.inputName} onChange={this.changeName}/>
                 {/*//inputAge*/}
                 <input type="text" value={this.state.inputAge} onChange={(e) => {
                     this.setState({
