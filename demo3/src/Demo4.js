@@ -20,7 +20,11 @@ export default class Demo4 extends Component{
                     age: 20,
                     class: "C1023H1"
                 }
-            ]
+            ],
+
+            inputName:'',
+            inputAge:'',
+            inputClass:''
 
 
         }
@@ -29,10 +33,43 @@ export default class Demo4 extends Component{
     render() {
         return (
             <div>
+                <h1>{this.state.inputName}</h1>
                 {this.state.list.map((item,index) =>
                 <h2 key={index}>{item.name},{item.age},{item.class}</h2>
                 )}
+                {/*//inputName*/}
+                <input type="text" value={this.state.inputName} onChange={(e) => {
+                    this.setState({
+                        inputName: e.target.value
+                    })
+                }}/>
+                {/*//inputAge*/}
+                <input type="text" value={this.state.inputAge} onChange={(e) => {
+                    this.setState({
+                        inputAge: e.target.value
+                    })
+                }}/>
+                {/*InputClass*/}
+                <input type="" value={this.state.inputClass} onChange={(e)=>{
+                    this.setState({
+                        inputClass: e.target.value
+                    })
+                }}/>
+                <button onClick={()=>{
+                    this.setState((state)=>{
+                        return {
+                            list: [...state.list, {name: state.inputName,age: state.inputAge, class: state.inputClass }],
+                            inputName: "",
+                            inputAge: "",
+                            inputClass: "",
+                        }
+                    })
+
+                }}>Add</button>
+
+
             </div>
+
         );
     }
 }
