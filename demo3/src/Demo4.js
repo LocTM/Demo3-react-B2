@@ -40,21 +40,12 @@ add = () => {
         }
     })
 }
-changeName = (e) => {
+change = (e) => {
     this.setState({
-        inputName: e.target.value
+        [e.target.name]: e.target.value
     })
 }
-changeAge = (e) =>{
-    this.setState({
-        inputAge: e.target.value
-    })
-}
-changeClass = (e)=>{
-    this.setState({
-        inputClass: e.target.value
-    })
-}
+
 
     render() {
         return (
@@ -63,11 +54,11 @@ changeClass = (e)=>{
                 <h2 key={index}>{item.name},{item.age},{item.class}</h2>
                 )}
                 {/*//inputName*/}
-                <input type="text" value={this.state.inputName} onChange={this.changeName}/>
+                <input type="text" name={"inputName"} value={this.state.inputName} onChange={this.change}/>
                 {/*//inputAge*/}
-                <input type="text" value={this.state.inputAge} onChange={this.changeAge}/>
+                <input type="text" name={"inputAge"} value={this.state.inputAge} onChange={this.change}/>
                 {/*InputClass*/}
-                <input type="" value={this.state.inputClass} onChange={this.changeClass}/>
+                <input type="" name={"inputClass"} value={this.state.inputClass} onChange={this.change}/>
                 {/*<button onClick={()=>{*/}
                 {/*    this.add()*/}
                 {/*}}>Add</button>*/}
