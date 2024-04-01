@@ -5,7 +5,7 @@ export default class Demo1 extends Component{
     constructor() {
         super();
         this.state = {
-        isShow: false
+        isShow: true
         }
     }
 
