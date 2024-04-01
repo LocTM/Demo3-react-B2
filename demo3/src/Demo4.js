@@ -28,8 +28,8 @@ export default class Demo4 extends Component{
     render() {
         return(
             <>
-                {this.state.list.map(item => (
-                    <h2>{item.name},{item.age},{item.class}</h2>
+                {this.state.list.map(item =>(
+                    <h2>Name: {item.name},Age: {item.age}, Class: {item.class}</h2>
                 ))}
             </>
         )
