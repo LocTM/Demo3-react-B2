@@ -5,7 +5,7 @@ export default class Demo1 extends Component{
     constructor() {
         super();
         this.state = {
-        name: "Hello World"
+        isShow: false
         }
     }
 
@@ -14,7 +14,14 @@ export default class Demo1 extends Component{
             <>
                 <h1>{this.state.name}</h1>
                 <h1>{this.props.x}</h1>
-                <Inside></Inside>
+                {this.state.isShow && <Inside/>}
+                <button onClick={()=>
+                    this.setState(state => {
+                        return {
+                            isShow: !state.isShow
+                        }
+                    })
+                }>Click</button>
             </>
         )
     }
