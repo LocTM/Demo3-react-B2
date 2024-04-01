@@ -30,6 +30,17 @@ export default class Demo4 extends Component{
         }
     }
 
+add = () => {
+    this.setState((state)=>{
+        return {
+            list: [...state.list, {name: state.inputName,age: state.inputAge, class: state.inputClass }],
+            inputName: "",
+            inputAge: "",
+            inputClass: "",
+        }
+    })
+}
+
     render() {
         return (
             <div>
@@ -56,15 +67,7 @@ export default class Demo4 extends Component{
                     })
                 }}/>
                 <button onClick={()=>{
-                    this.setState((state)=>{
-                        return {
-                            list: [...state.list, {name: state.inputName,age: state.inputAge, class: state.inputClass }],
-                            inputName: "",
-                            inputAge: "",
-                            inputClass: "",
-                        }
-                    })
-
+                    this.add()
                 }}>Add</button>
 
 
